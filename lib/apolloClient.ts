@@ -9,7 +9,6 @@ import 'cross-fetch/polyfill'
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined
 const createApolloClient = () => {
-  console.log(process.env.NEXT_PUBLIC_HASURA_KEY, process.env.NEXT_PUBLIC_HASURA_URL)
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
