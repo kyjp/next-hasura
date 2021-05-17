@@ -1,0 +1,478 @@
+nextjs-hasura-basic-lesson % yarn test
+yarn run v1.22.5
+$ jest --env=jsdom --verbose
+ FAIL  __tests__/HasuraSSG.test.tsx
+  SSG Test Cases
+    ✕ Should render the list of users pre-fetched by getStaticProps (650 ms)
+
+  ● SSG Test Cases › Should render the list of users pre-fetched by getStaticProps
+
+    Only absolute URLs are supported
+
+      at new ApolloError (node_modules/@apollo/client/errors/index.js:26:28)
+      at node_modules/@apollo/client/core/QueryManager.js:536:19
+      at both (node_modules/@apollo/client/utilities/observables/asyncMap.js:16:53)
+      at node_modules/@apollo/client/utilities/observables/asyncMap.js:9:72
+      at Object.then (node_modules/@apollo/client/utilities/observables/asyncMap.js:9:24)
+      at Object.error (node_modules/@apollo/client/utilities/observables/asyncMap.js:17:49)
+      at notifySubscription (node_modules/zen-observable/lib/Observable.js:140:18)
+      at onNotify (node_modules/zen-observable/lib/Observable.js:179:3)
+      at SubscriptionObserver.error (node_modules/zen-observable/lib/Observable.js:240:7)
+      at node_modules/@apollo/client/utilities/observables/iteration.js:4:68
+          at Array.forEach (<anonymous>)
+      at iterateObserversSafely (node_modules/@apollo/client/utilities/observables/iteration.js:4:25)
+      at Object.error (node_modules/@apollo/client/utilities/observables/Concast.js:36:21)
+      at notifySubscription (node_modules/zen-observable/lib/Observable.js:140:18)
+      at onNotify (node_modules/zen-observable/lib/Observable.js:179:3)
+      at SubscriptionObserver.error (node_modules/zen-observable/lib/Observable.js:240:7)
+      at node_modules/@apollo/client/link/http/createHttpLink.js:110:26
+
+ FAIL  __tests__/HasuraCRUD.test.tsx
+  Hasura CRUD Test Cases
+    ✕ Should render the list of users by useQuery (299 ms)
+
+  ● Hasura CRUD Test Cases › Should render the list of users by useQuery
+
+    expect(element).toBeInTheDocument()
+
+    element could not be found in the document
+
+      25 |     })
+      26 |     render(page)
+    > 27 |     expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument()
+         |                                                    ^
+      28 |     expect(await screen.findByText('Test user A')).toBeInTheDocument()
+      29 |     expect(
+      30 |       screen.getByText('2021-01-13T18:06:46.412969+00:00')
+
+      at Object.<anonymous> (__tests__/HasuraCRUD.test.tsx:27:52)
+
+ FAIL  __tests__/HasuraMain.test.tsx
+  Hasura Fetch Test Cases
+    ✕ Should render the list of users by useQuery (1781 ms)
+
+  ● Hasura Fetch Test Cases › Should render the list of users by useQuery
+
+    TestingLibraryElementError: Unable to find an element with the text: Test user A. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    <body>
+      <div>
+        <div
+          class="flex flex-col justify-center items-center min-h-screen text-gray-600 text-sm font-mono"
+        >
+          <header>
+            <nav
+              class="bg-gray-800 w-screen"
+            >
+              <div
+                class="flex items-center pl-8 h-14"
+              >
+                <div
+                  class="flex space-x-4"
+                >
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="home-nav"
+                    href="/"
+                  >
+                    Home
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="makevar-nav"
+                    href="/local-state-a"
+                  >
+                    makeVar
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="fetchpolicy-nav"
+                    href="/hasura-main"
+                  >
+                    fetchPolicy(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="crud-nav"
+                    href="/hasura-crud"
+                  >
+                    CRUD(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="ssg-nav"
+                    href="/hasura-ssg"
+                  >
+                    SSG+ISR(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="memo-nav"
+                    href="/hooks-memo"
+                  >
+                    custom hook + memo
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </header>
+          <main
+            class="flex flex-1 flex-col justify-center items-center w-screen"
+          >
+            <p>
+              Error:
+              Only absolute URLs are supported
+            </p>
+          </main>
+          <footer
+            class="w-full h-12 flex justify-center items-center border-t"
+          >
+            <a
+              class="flex items-center"
+              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Powered by
+
+              <img
+                alt="Vercel Logo"
+                class="h-4 ml-2"
+                src="/vercel.svg"
+              />
+            </a>
+          </footer>
+        </div>
+      </div>
+    </body>
+
+    <body>
+      <div>
+        <div
+          class="flex flex-col justify-center items-center min-h-screen text-gray-600 text-sm font-mono"
+        >
+          <header>
+            <nav
+              class="bg-gray-800 w-screen"
+            >
+              <div
+                class="flex items-center pl-8 h-14"
+              >
+                <div
+                  class="flex space-x-4"
+                >
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="home-nav"
+                    href="/"
+                  >
+                    Home
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="makevar-nav"
+                    href="/local-state-a"
+                  >
+                    makeVar
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="fetchpolicy-nav"
+                    href="/hasura-main"
+                  >
+                    fetchPolicy(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="crud-nav"
+                    href="/hasura-crud"
+                  >
+                    CRUD(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="ssg-nav"
+                    href="/hasura-ssg"
+                  >
+                    SSG+ISR(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="memo-nav"
+                    href="/hooks-memo"
+                  >
+                    custom hook + memo
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </header>
+          <main
+            class="flex flex-1 flex-col justify-center items-center w-screen"
+          >
+            <p>
+              Error:
+              Only absolute URLs are supported
+            </p>
+          </main>
+          <footer
+            class="w-full h-12 flex justify-center items-center border-t"
+          >
+            <a
+              class="flex items-center"
+              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Powered by
+
+              <img
+                alt="Vercel Logo"
+                class="h-4 ml-2"
+                src="/vercel.svg"
+              />
+            </a>
+          </footer>
+        </div>
+      </div>
+    </body>Error: Unable to find an element with the text: Test user A. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    <body>
+      <div>
+        <div
+          class="flex flex-col justify-center items-center min-h-screen text-gray-600 text-sm font-mono"
+        >
+          <header>
+            <nav
+              class="bg-gray-800 w-screen"
+            >
+              <div
+                class="flex items-center pl-8 h-14"
+              >
+                <div
+                  class="flex space-x-4"
+                >
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="home-nav"
+                    href="/"
+                  >
+                    Home
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="makevar-nav"
+                    href="/local-state-a"
+                  >
+                    makeVar
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="fetchpolicy-nav"
+                    href="/hasura-main"
+                  >
+                    fetchPolicy(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="crud-nav"
+                    href="/hasura-crud"
+                  >
+                    CRUD(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="ssg-nav"
+                    href="/hasura-ssg"
+                  >
+                    SSG+ISR(Hasura)
+                  </a>
+                  <a
+                    class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                    data-testid="memo-nav"
+                    href="/hooks-memo"
+                  >
+                    custom hook + memo
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </header>
+          <main
+            class="flex flex-1 flex-col justify-center items-center w-screen"
+          >
+            <p>
+              Error:
+              Only absolute URLs are supported
+            </p>
+          </main>
+          <footer
+            class="w-full h-12 flex justify-center items-center border-t"
+          >
+            <a
+              class="flex items-center"
+              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Powered by
+
+              <img
+                alt="Vercel Logo"
+                class="h-4 ml-2"
+                src="/vercel.svg"
+              />
+            </a>
+          </footer>
+        </div>
+      </div>
+    </body>
+
+      27 |     render(page)
+      28 |     expect(await screen.findByText('Hasura main page')).toBeInTheDocument()
+    > 29 |     expect(await screen.findByText('Test user A')).toBeInTheDocument()
+         |                         ^
+      30 |     expect(screen.getByText('Test user B')).toBeInTheDocument()
+      31 |     expect(screen.getByText('Test user C')).toBeInTheDocument()
+      32 |   })
+
+      at waitForWrapper (node_modules/@testing-library/dom/dist/wait-for.js:173:27)
+      at findByText (node_modules/@testing-library/dom/dist/query-helpers.js:101:33)
+      at Object.<anonymous> (__tests__/HasuraMain.test.tsx:29:25)
+
+ FAIL  __tests__/NavBar.test.tsx
+  Navigation Test Cases
+    ✕ Should route to selected page in navbar (1408 ms)
+
+  ● Navigation Test Cases › Should route to selected page in navbar
+
+    expect(element).toBeInTheDocument()
+
+    element could not be found in the document
+
+      33 |     expect(await screen.findByText('Hasura main page')).toBeInTheDocument()
+      34 |     userEvent.click(screen.getByTestId('crud-nav'))
+    > 35 |     expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument()
+         |                                                    ^
+      36 |     userEvent.click(screen.getByTestId('ssg-nav'))
+      37 |     expect(await screen.findByText('SSG + ISR')).toBeInTheDocument()
+      38 |     userEvent.click(screen.getByTestId('memo-nav'))
+
+      at Object.<anonymous> (__tests__/NavBar.test.tsx:35:52)
+
+ PASS  __tests__/Home.test.tsx
+  ✓ Should render title text (30 ms)
+
+  console.log
+    {
+      TERM_PROGRAM: 'vscode',
+      NODENV_SHELL: 'zsh',
+      NODE: '/Users/user/.nodenv/versions/12.16.1/bin/node',
+      NODENV_DIR: '/Users/user/sites/js/react/nextjs-hasura-basic-lesson',
+      INIT_CWD: '/Users/user/sites/js/react/nextjs-hasura-basic-lesson',
+      PYENV_ROOT: '/Users/user/.pyenv',
+      npm_package_devDependencies_typescript: '^4.2.4',
+      npm_config_version_git_tag: 'true',
+      TERM: 'xterm-256color',
+      SHELL: '/bin/zsh',
+      npm_package_devDependencies_jest: '^26.6.3',
+      TMPDIR: '/var/folders/cy/6rqjhj_x21v80jx5s8glqy940000gn/T/',
+      npm_package_devDependencies_jest_css_modules: '^2.1.0',
+      npm_package_devDependencies__testing_library_user_event: '^13.1.8',
+      npm_config_init_license: 'MIT',
+      TERM_PROGRAM_VERSION: '1.56.0',
+      npm_package_scripts_dev: 'next dev',
+      ORIGINAL_XDG_CURRENT_DESKTOP: 'undefined',
+      npm_package_dependencies_postcss: '^8.2.14',
+      npm_package_dependencies_tailwindcss: '^2.1.2',
+      npm_package_scripts_gen_types: 'graphql-codegen --config codegen.yml',
+      npm_package_private: 'true',
+      npm_config_registry: 'https://registry.yarnpkg.com',
+      NODENV_ROOT: '/Users/user/.nodenv',
+      npm_package_dependencies_react_dom: '17.0.2',
+      NODENV_HOOK_PATH: '/Users/user/.nodenv/nodenv.d:/usr/local/etc/nodenv.d:/etc/nodenv.d:/usr/lib/nodenv/hooks',
+      npm_package_readmeFilename: 'README.md',
+      USER: 'user',
+      npm_package_description: 'First, run the development server:',
+      npm_package_devDependencies__testing_library_react: '^11.2.6',
+      npm_package_devDependencies__types_react: '^17.0.5',
+      npm_package_dependencies__apollo_react_hooks: '^4.0.0',
+      npm_package_devDependencies_babel_jest: '^26.6.3',
+      npm_package_devDependencies__babel_core: '^7.14.0',
+      SSH_AUTH_SOCK: '/private/tmp/com.apple.launchd.XyoTR1E88u/Listeners',
+      __CF_USER_TEXT_ENCODING: '0x1F5:0x1:0xE',
+      npm_package_devDependencies_msw: '^0.28.2',
+      npm_package_devDependencies__types_jest: '^26.0.23',
+      npm_execpath: '/Users/user/.nodenv/versions/12.16.1/lib/node_modules/yarn/bin/yarn.js',
+      npm_package_dependencies_graphql: '^15.5.0',
+      npm_package_jest_moduleNameMapper____css__: '<rootDir>/node_modules/jest-css-modules',
+      npm_package_devDependencies__graphql_codegen_cli: '1.21.4',
+      PATH: '/var/folders/cy/6rqjhj_x21v80jx5s8glqy940000gn/T/yarn--1621224670622-0.30789495617150675:/Users/user/sites/js/react/nextjs-hasura-basic-lesson/node_modules/.bin:/Users/user/.config/yarn/link/node_modules/.bin:/Users/user/.nodenv/versions/12.16.1/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/user/.nodenv/versions/12.16.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/user/.nodenv/versions/12.16.1/bin/node_modules/npm/bin/node-gyp-bin:/Users/user/.nodenv/versions/12.16.1/bin:/Users/user/.nodenv/libexec:/Users/user/.nodenv/plugins/node-build/bin:/Users/user/.pyenv/shims:/Users/user/.pyenv/bin:/Users/user/.nodenv/shims:/Users/user/.nodenv/bin:/usr/local/opt/php@7.4/sbin:/usr/local/opt/php@7.4/bin:/Users/user/Library/Android/sdk/platform-tools:/Users/user/.composer/vendor/bin:/Users/user/.rbenv/shims:/Users/user/.rbenv/bin:/Users/user/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/user/.pyenv/shims:/Users/user/.pyenv/bin:/Users/user/.nodenv/shims:/Users/user/.nodenv/bin:/usr/local/opt/php@7.4/sbin:/usr/local/opt/php@7.4/bin:/Users/user/Library/Android/sdk/platform-tools:/Users/user/.composer/vendor/bin:/Users/user/.rbenv/shims:/Users/user/.rbenv/bin:/Applications/MAMP/Library/bin:/Applications/MAMP/Library/bin',
+      npm_config_argv: '{"remain":[],"cooked":["run","test"],"original":["test"]}',
+      _: '/Users/user/sites/js/react/nextjs-hasura-basic-lesson/node_modules/.bin/jest',
+      npm_package_jest_testPathIgnorePatterns_1: '<rootDir>/node_modules/',
+      PWD: '/Users/user/sites/js/react/nextjs-hasura-basic-lesson',
+      npm_package_jest_testPathIgnorePatterns_0: '<rootDir>/.next/',
+      JAVA_HOME: '',
+      npm_lifecycle_event: 'test',
+      LANG: 'ja_JP.UTF-8',
+      ANDROID_SDK: '/Users/user/Library/Android/sdk',
+      npm_package_name: 'nextjs-hasura-basic-lesson',
+      npm_package_dependencies_autoprefixer: '^10.2.5',
+      npm_package_scripts_start: 'next start',
+      npm_package_scripts_build: 'next build',
+      npm_config_version_commit_hooks: 'true',
+      XPC_FLAGS: '0x0',
+      npm_config_bin_links: 'true',
+      RBENV_SHELL: 'zsh',
+      npm_package_dependencies_next: '10.2.0',
+      XPC_SERVICE_NAME: '0',
+      npm_package_devDependencies_next_page_tester: '^0.24.2',
+      npm_package_version: '0.1.0',
+      PYENV_SHELL: 'zsh',
+      SHLVL: '2',
+      HOME: '/Users/user',
+      VSCODE_GIT_ASKPASS_MAIN: '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js',
+      npm_package_devDependencies__graphql_codegen_typescript: '^1.22.0',
+      npm_package_scripts_test: 'jest --env=jsdom --verbose',
+      npm_config_save_prefix: '^',
+      npm_config_strict_ssl: 'true',
+      npm_config_version_git_message: 'v%s',
+      npm_package_dependencies__heroicons_react: '^1.0.1',
+      LOGNAME: 'user',
+      YARN_WRAP_OUTPUT: 'false',
+      npm_lifecycle_script: 'jest --env=jsdom --verbose',
+      npm_package_devDependencies__graphql_codegen_typescript_react_apollo: '2.2.4',
+      NODENV_VERSION: '12.16.1',
+      VSCODE_GIT_IPC_HANDLE: '/var/folders/cy/6rqjhj_x21v80jx5s8glqy940000gn/T/vscode-git-f18750b104.sock',
+      npm_package_dependencies_react: '17.0.2',
+      npm_package_devDependencies__testing_library_dom: '^7.30.4',
+      npm_config_version_git_sign: '',
+      npm_config_ignore_scripts: '',
+      npm_config_user_agent: 'yarn/1.22.5 npm/? node/v12.16.1 darwin x64',
+      VSCODE_GIT_ASKPASS_NODE: '/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Renderer).app/Contents/MacOS/Code Helper (Renderer)',
+      GIT_ASKPASS: '/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh',
+      npm_package_devDependencies__types_node: '^15.0.2',
+      npm_config_init_version: '1.0.0',
+      npm_config_ignore_optional: '',
+      npm_package_dependencies__apollo_client: '^3.3.16',
+      npm_package_dependencies_cross_fetch: '^3.1.4',
+      COLORTERM: 'truecolor',
+      npm_node_execpath: '/Users/user/.nodenv/versions/12.16.1/bin/node',
+      npm_package_devDependencies__testing_library_jest_dom: '^5.12.0',
+      npm_package_devDependencies__graphql_codegen_typescript_operations: '1.17.16',
+      npm_config_version_tag_prefix: 'v',
+      NODE_ENV: 'test',
+      JEST_WORKER_ID: '3',
+      FORCE_COLOR: '1'
+    }
+
+      at Object.<anonymous> (__tests__/Home.test.tsx:7:11)
+
+Test Suites: 4 failed, 1 passed, 5 total
+Tests:       4 failed, 1 passed, 5 total
+Snapshots:   0 total
+Time:        5.906 s, estimated 12 s
+Ran all test suites.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

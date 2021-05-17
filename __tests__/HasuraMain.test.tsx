@@ -4,6 +4,7 @@ import { setupServer } from 'msw/node'
 import { getPage, initTestHelpers } from 'next-page-tester'
 import { handlers } from '../mock/handlers'
 
+process.env.NEXT_PUBLIC_HASURA_URL = "https://hasura-lesson-basic.hasura.app/v1/"
 initTestHelpers()
 
 const server = setupServer(...handlers)
